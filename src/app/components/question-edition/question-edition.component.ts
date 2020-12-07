@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Choice } from 'src/app/datamodel/Choice';
 import { Question } from 'src/app/datamodel/Question';
 
 @Component({
@@ -12,7 +13,10 @@ export class QuestionEditionComponent implements OnInit {
   
 
   constructor() {
-    this.defaultQuestion = new Question("Default question title");
+    var defaultChoices = [
+      new Choice("this is a valid choice", true)
+    ];
+    this.defaultQuestion = new Question("Default question title", defaultChoices);
    }
 
   ngOnInit(): void {

@@ -1,7 +1,12 @@
 <p>question-edition works!</p>
 
 <form>
-    <label>Enter your question</label> <input name="question-title" value="{{defaultQuestion.title}}">
+    <div>
+         <label>Enter your question</label> <input name="question-title" value="{{defaultQuestion.title}}">
+    </div>
+    <div *ngFor="let currentChoice of defaultQuestion.choices">
+        <label>1.</label><input name="choice1" value="{{currentChoice.title}}"> <span>{{currentChoice.validity}}</span>
+    </div>
     <button type="submit"><label>Test</label></button>
 
 
