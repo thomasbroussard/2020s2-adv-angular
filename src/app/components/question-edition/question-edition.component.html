@@ -2,10 +2,13 @@
 
 <form>
     <div>
-         <label>Enter your question</label> <input name="question-title" value="{{defaultQuestion.title}}">
+         <label>Enter your question</label> <input name="question-title" value="{{currentQuestion.title}}">
     </div>
-    <div *ngFor="let currentChoice of defaultQuestion.choices">
-        <label>1.</label><input name="choice1" value="{{currentChoice.title}}"> <span>{{currentChoice.validity}}</span>
+    <div *ngFor="let currentChoice of currentQuestion.choices; let i = index">
+        <mat-form-field>
+            <mat-label>{{i}}</mat-label>
+            <input placeholder="Just a placeholder" value="{{currentChoice.title}}" >
+          </mat-form-field>
     </div>
     <button type="submit"><label>Test</label></button>
 

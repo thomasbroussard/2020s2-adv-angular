@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Choice } from 'src/app/datamodel/Choice';
 import { Question } from 'src/app/datamodel/Question';
 
@@ -9,15 +9,9 @@ import { Question } from 'src/app/datamodel/Question';
 })
 export class QuestionEditionComponent implements OnInit {
 
-  defaultQuestion:Question;
-  
+  @Input('question')
+  currentQuestion:Question = new Question("",[]);
 
-  constructor() {
-    var defaultChoices = [
-      new Choice("this is a valid choice", true)
-    ];
-    this.defaultQuestion = new Question("Default question title", defaultChoices);
-   }
 
   ngOnInit(): void {
   }
