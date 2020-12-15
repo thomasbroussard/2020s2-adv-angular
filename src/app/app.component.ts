@@ -10,12 +10,14 @@ import { QuestionsService } from './services/questions-service.service';
 })
 export class AppComponent {
   title = 'quiz-app';
-  currentQuestion: Question;
+  currentQuestion: Question = new Question('default',[]);
 
 
   constructor(private questionService: QuestionsService){
     //TODO : put this in a list of question-edition-component
-    this.currentQuestion = questionService.fetchQuestions()[0];
+    questionService.fetchQuestions().subscribe(data => {
+        this.currentQuestion = data;
+    })
   }
 
   savelist(){

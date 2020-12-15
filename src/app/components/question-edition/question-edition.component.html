@@ -25,6 +25,7 @@
         <div *ngFor="let currentChoice of currentQuestion.choices; let i = index">
             {{i}}. <mat-form-field>
                 <mat-label>choice</mat-label>
+                <mat-checkbox class="example-margin" [(ngModel)]="currentChoice.validity" ></mat-checkbox>
                 <input matInput placeholder="Just a placeholder" value="{{currentChoice.title}}" >
             </mat-form-field>
         </div>
