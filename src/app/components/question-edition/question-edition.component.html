@@ -22,9 +22,12 @@
       <mat-card-subtitle><em>topics?</em></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        <em>choices to be displayed here</em>
-      </p>
+        <div *ngFor="let currentChoice of currentQuestion.choices; let i = index">
+            {{i}}. <mat-form-field>
+                <mat-label>choice</mat-label>
+                <input matInput placeholder="Just a placeholder" value="{{currentChoice.title}}" >
+            </mat-form-field>
+        </div>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>Save</button>
